@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.29bc8131.css",
-    "main.js": "/static/js/main.5c66b4ed.js",
+    "main.js": "/static/js/main.bde1b0d5.js",
     "static/js/415.4d6acbeb.chunk.js": "/static/js/415.4d6acbeb.chunk.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/leaf.png": "/static/media/leaf.ff2616f664c8c0ceab91.png",
-    "static/media/Ankit_CV_Re.PDF": "/static/media/Ankit_CV_Re.aaac34130ebd482bff19.PDF",
+    "static/media/AnkitCV24.pdf": "/static/media/AnkitCV24.448a4f1543ae1e678314.pdf",
     "static/media/emotion.png": "/static/media/emotion.eabfc16e7a146ab15778.png",
     "static/media/suicide.png": "/static/media/suicide.9c86cd7138a398c45fa5.png",
     "static/media/codeEditor.png": "/static/media/codeEditor.1b585492490c8c1cace9.png",
@@ -18,12 +18,12 @@
     "static/media/pre.svg": "/static/media/pre.4410c5baaa673cc131da.svg",
     "index.html": "/index.html",
     "main.29bc8131.css.map": "/static/css/main.29bc8131.css.map",
-    "main.5c66b4ed.js.map": "/static/js/main.5c66b4ed.js.map",
+    "main.bde1b0d5.js.map": "/static/js/main.bde1b0d5.js.map",
     "415.4d6acbeb.chunk.js.map": "/static/js/415.4d6acbeb.chunk.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.29bc8131.css",
-    "static/js/main.5c66b4ed.js"
+    "static/js/main.bde1b0d5.js"
   ]
 }
