@@ -1,0 +1,15 @@
+{
+  "name": "ankit-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prebuilt static portfolio prepared for Vercel deployment.",
+  "scripts": {
+    "build": "node -e \"const fs = require('fs'); if (!fs.existsSync('public/index.html')) throw new Error('Missing public/index.html'); console.log('Static site ready for Vercel.');\"",
+    "test": "node -e \"const fs = require('fs'); JSON.parse(fs.readFileSync('vercel.json','utf8')); const html = fs.readFileSync('public/index.html','utf8'); for (const asset of ['/static/js/main.bde1b0d5.js','/static/css/main.29bc8131.css']) { if (!html.includes(asset)) throw new Error('Missing asset reference: ' + asset); if (!fs.existsSync('public' + asset)) throw new Error('Missing asset file: public' + asset); } console.log('Static deployment checks passed.');\"",
+    "smoke": "node scripts/smoke-test.js",
+    "start": "npx serve public"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}
