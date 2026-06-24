@@ -2,14 +2,36 @@
   "name": "ankit-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Prebuilt static portfolio prepared for Vercel deployment.",
+  "description": "React portfolio restored from the deployed build source maps.",
   "scripts": {
-    "build": "node -e \"const fs = require('fs'); console.log('Using Node.js ' + process.version); if (!fs.existsSync('public/index.html')) throw new Error('Missing public/index.html'); console.log('Static site ready for Vercel.');\"",
-    "test": "node -e \"const fs = require('fs'); JSON.parse(fs.readFileSync('vercel.json','utf8')); const html = fs.readFileSync('public/index.html','utf8'); for (const asset of ['/static/js/main.bde1b0d5.js','/static/css/main.29bc8131.css']) { if (!html.includes(asset)) throw new Error('Missing asset reference: ' + asset); if (!fs.existsSync('public' + asset)) throw new Error('Missing asset file: public' + asset); } console.log('Static deployment checks passed.');\"",
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node -e \"const fs = require('fs'); JSON.parse(fs.readFileSync('vercel.json','utf8')); for (const file of ['src/App.jsx','src/components/About/About.jsx','src/components/About/AboutCard.jsx','src/Assets/about.png']) { if (!fs.existsSync(file)) throw new Error('Missing source file: ' + file); } console.log('Source project checks passed.');\"",
     "smoke": "node scripts/smoke-test.js",
-    "start": "npx serve public"
+    "deploy:check": "npm run build && npm test && npm run smoke"
   },
   "engines": {
     "node": "24.x"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "bootstrap": "^5.1.3",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.1.2",
+    "react-dom": "^17.0.2",
+    "react-github-calendar": "^3.4.0",
+    "react-icons": "^4.3.1",
+    "react-parallax-tilt": "^1.7.42",
+    "react-pdf": "^5.7.2",
+    "react-router-dom": "^6.2.2",
+    "react-tsparticles": "^1.42.4",
+    "typewriter-effect": "^2.18.2",
+    "vite": "^6.0.7",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "sass": "^1.83.0"
   }
 }

@@ -2,7 +2,7 @@ const fs = require("fs");
 const http = require("http");
 const path = require("path");
 
-const root = path.resolve("public");
+const root = path.resolve("dist");
 const contentTypes = {
   ".html": "text/html; charset=utf-8",
   ".js": "application/javascript; charset=utf-8",
@@ -37,7 +37,11 @@ async function run() {
     const homeText = await home.text();
     const deep = await fetch(`http://127.0.0.1:${port}/projects`);
     const deepText = await deep.text();
-    const js = await fetch(`http://127.0.0.1:${port}/static/js/main.bde1b0d5.js`);
+    const htmlAssetMatch = homeText.match(/<script[^>]+src="([^"]+\.js)"/);
+    if (!htmlAssetMatch) {
+      throw new Error("Built HTML did not include a JavaScript entrypoint.");
+    }
+    const js = await fetch(`http://127.0.0.1:${port}${htmlAssetMatch[1]}`);
     const jsText = await js.text();
 
     if (!home.ok || !deep.ok || !js.ok) {
